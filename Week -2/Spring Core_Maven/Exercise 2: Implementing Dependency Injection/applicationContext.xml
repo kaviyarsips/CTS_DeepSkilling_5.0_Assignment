@@ -6,13 +6,14 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="engine"
-          class="com.cognizant.spring.exercise2.Engine"/>
+    <bean id="bookRepository"
+          class="com.library.repository.BookRepository"/>
 
-    <bean id="car"
-          class="com.cognizant.spring.exercise2.Car">
+    <bean id="bookService"
+          class="com.library.service.BookService">
 
-        <property name="engine" ref="engine"/>
+        <property name="bookRepository"
+                  ref="bookRepository"/>
 
     </bean>
 
