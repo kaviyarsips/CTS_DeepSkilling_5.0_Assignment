@@ -1,7 +1,9 @@
-package com.cognizant.spring.exercise1;
+package com.library;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.library.service.BookService;
 
 public class App {
 
@@ -10,9 +12,8 @@ public class App {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        HelloWorld hello =
-                (HelloWorld) context.getBean("helloWorld");
+        BookService service = context.getBean("bookService", BookService.class);
 
-        hello.displayMessage();
+        service.displayService();
     }
 }
